@@ -1,0 +1,13 @@
+.square {
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 40px;
+    float: left;
+    border-style:groove;
+}
+
+.square:hover {
+    background-color: #ec4545 !important;
+    color:#fff;
+  }

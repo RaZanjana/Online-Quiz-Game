@@ -327,12 +327,13 @@
                                 <!-- <p class="mb-0">Login to</p> -->
                                 <h2>Online Quiz Game</h2>
                             </div>
-                            <form action="">
+                            <!-- <form  autocomplete="off" [formGroup]="userForm" (ngSubmit)="submitForm()"> -->
+                            <form  autocomplete="off" >
                                 <div class="ext-login">
                                     <div class="row pr-2 pl-2 m-0">
                                         <div class="col">
                                             <label for="inp" class="inp">
-                                                <input type="text" id="stfid" placeholder="&nbsp;" />
+                                                <input type="text" id="username" placeholder="&nbsp;"  formControlName="username" required/>
                                                 <span class="label"><i class="fas fa-id-card-alt"></i>&nbsp;&nbsp;Username</span>
                                                 <span class="focus-bg"></span>
                                             </label>
@@ -341,7 +342,7 @@
                                     <div class="row pr-2 pl-2 m-0">
                                         <div class="col">
                                             <label for="inp" class="inp">
-                                                <input type="password" id="pswd" placeholder="&nbsp;" />
+                                                <input type="password" id="password" formControlName="password" placeholder="&nbsp;" required/>
                                                 <span class="label"><i class="fas fa-key"></i>&nbsp;&nbsp;Password</span>
                                                 <span class="focus-bg"></span>
                                             </label>
@@ -355,9 +356,10 @@
                                 </div>
                                 <div class="row pr-2 pl-2 m-0 mb-2">
                                     <div class="col">
-                                        <button type="button" class="btn btn-primary w-100">
+                                        <button type="submit" class="btn btn-primary w-100">
                                             Login Now
                                         </button>
+                                        <!-- <button class="btn btn-primaryw-100" routerLink="/quiz-game/sign-up">Login Now</button> -->
                                     </div>
                                 </div>
                                 <div class="row pr-2 pl-2 m-0 mb-2">
