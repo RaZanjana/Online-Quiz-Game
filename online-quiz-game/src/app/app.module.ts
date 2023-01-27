@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './user/pages/home/home.component';
 import { NavBarComponent } from './user/components/nav-bar/nav-bar.component';
 import { RoomComponent } from './user/pages/room/room.component';
-import { HeroComponent } from './user/pages/hero/hero.component';
+import { HeroComponent } from './user/components/hero/hero.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { HeroComponent } from './user/pages/hero/hero.component';
     BrowserAnimationsModule,
    // NgbModule,
    // NgbModule
+   MatButtonModule,
+   MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
