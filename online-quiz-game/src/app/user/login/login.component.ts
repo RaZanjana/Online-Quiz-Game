@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { User } from '../../user';
 import { UserService } from '../../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit{
   users$: Observable<User> = new Observable();
   user?: User;
   UserService: any;
-  constructor(private fb: FormBuilder) { }
+
+
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   get username() { return this.userForm.get('username')!; }
   get password() { return this.userForm.get('password')!; }
@@ -51,5 +54,9 @@ export class LoginComponent implements OnInit{
 
     });
 
+  }
+
+  redirectToHome(){
+    this.router.navigate(['/quiz-game/home'])
   }
 }
