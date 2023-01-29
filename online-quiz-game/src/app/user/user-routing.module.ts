@@ -19,7 +19,7 @@ const routes: Routes = [
     component:HomeComponent
   },
   {
-    path:'room',
+    path:'room/:id',
     component:RoomComponent
   }
 ];

@@ -13,17 +13,10 @@
                 <div class="card-header text-center">Team A</div>
                 <div class="card-body">
                   <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Cras justo odio
-                      <span class="">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Dapibus ac facilisis in
-                      <span class="">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Morbi leo risus
-                      <span class="">1</span>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let data of teamAMembers; let i = index">
+                      <!-- <li class="list-group-item d-flex justify-content-between align-items-center"> -->
+                      {{data.username}}
+                      <span class="">{{data.marks}}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-primary" >
                       Total
@@ -37,17 +30,11 @@
                 <div class="card-header">Team B</div>
                 <div class="card-body h-100">
                   <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Cras justo odio
-                      <span class="">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Dapibus ac facilisis in
-                      <span class=" ">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Morbi leo risus
-                      <span class="  ">1</span>
+                    <!-- <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let data of teamB; let i = index"> -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let data of teamAMembers; let i = index">
+                      <!-- {{data}} -->
+                      {{data.username}}
+                      <span class="">{{data.marks}}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-primary" >
                      Total
@@ -60,13 +47,17 @@
             </div>
             <div class="col-md-9">
               <div class="card mt-4">
-                <div class="card-header d-flex justify-content-between">01) Which animal is known as the 'Ship of the Desert'? <span>1/10</span></div>
-                <div class="card-body ">
+                <div class="card-header d-flex justify-content-between">{{quection}}? <span>{{q}}/10</span></div>
+                <!-- <div class="card-header d-flex justify-content-between">xvdxcvxcvdxcvxc? <span>/10</span></div> -->
+                <div class="card-body">
                   <div id ='left-hand' class="left-hand">
-                    <div class='square text-center' ><span>1</span> </div>
+                    <div *ngFor="let answer of answers; let i = index" [id]="i" (click)="clickOnAnswer(i)" class='square text-center'>
+                      <span class="text-center">{{answers[i]}}</span>
+                    </div>
+                    <!-- <div class='square text-center' ><span>1</span> </div>
                     <div class='square text-center' ><span>2</span> </div>
                     <div class='square text-center' ><span>3</span> </div>
-                    <div class='square text-center' ><span>4</span> </div>
+                    <div class='square text-center' ><span>4</span> </div> -->
                   </div>
 
                   
@@ -75,9 +66,9 @@
               <div class="card mt-4">
                 <div class="card-body ">
                   <div class="jumbotron">
-                    <h1 class="display-4">Group A</h1>                   
+                    <h1 class="display-4">{{team}}</h1>                   
                     <hr class="my-4">
-                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <p class="lead">{{CAnswer}} .{{who}}</p>
                     <div class="d-flex justify-content-end">
                       <button type="button" class="btn btn-warning  btn-lg">Skip</button>
                     </div>

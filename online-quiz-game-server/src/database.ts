@@ -1,18 +1,22 @@
 import * as mongodb from "mongodb";
-import {User} from "./user";
+import {User} from "./modle/user";
+import {Quiz} from "./modle/quiz";
 
 export const collections: {
     users?: mongodb.Collection<User>;
+    quizzes?: mongodb.Collection<Quiz>;
  } = {};
  export async function connectToDatabase(uri: string) {
     const client = new mongodb.MongoClient(uri);
     await client.connect();
   
-    const db = client.db("meanStackExample");
+    const db = client.db("quizDB");
     await applySchemaValidation(db);
   
     const usersCollection = db.collection<User>("users");
+    const quizzesCollection = db.collection<Quiz>("quiz");
     collections.users = usersCollection;
+    collections.quizzes = quizzesCollection;
  }
 
 
